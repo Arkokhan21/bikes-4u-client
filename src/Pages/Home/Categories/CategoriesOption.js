@@ -6,7 +6,7 @@ const CategoriesOption = ({ category }) => {
     const { category_name, category_img, _id } = category
 
     return (
-        <div className="card w-96 h-96 bg-gray-200 shadow-xl">
+        <div className="card w-96 h-[500] bg-gray-200 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={category_img} alt="" className="rounded-xl" />
             </figure>
