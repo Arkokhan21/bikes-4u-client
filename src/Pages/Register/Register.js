@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider';
 
 const Register = () => {
@@ -25,6 +26,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
+                toast.success('Register Successfull')
                 navigate(from, { replace: true });
 
                 const userInfo = {

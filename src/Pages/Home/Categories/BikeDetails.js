@@ -1,7 +1,7 @@
 import React from 'react';
 import { GoVerified } from "react-icons/go";
 
-const BikeDetails = ({ bike }) => {
+const BikeDetails = ({ bike, setBikeForBuy }) => {
 
     const { bikeName, sellerName, isVerified, location, img, originalPrice, resalePrice, useTime, postDate } = bike;
 
@@ -18,7 +18,7 @@ const BikeDetails = ({ bike }) => {
                 <h2 className="">Post: {postDate}</h2>
 
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <label onClick={() => setBikeForBuy(bike)} htmlFor="submit-modal" className="btn btn-active btn-primary">Buy Now</label>
                 </div>
             </div>
         </div >
