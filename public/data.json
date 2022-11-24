@@ -1,0 +1,89 @@
+[
+    {
+        "category_id": "01",
+        "category_name": "SUZUKI",
+        "category_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Suzuki_logo_2.svg/2560px-Suzuki_logo_2.svg.png",
+        "bikes": [
+            {
+                "bikeName": "Suzuki GSX-R150",
+                "sellerName": "Peter Parker",
+                "isVerified": "true",
+                "location": "Dhaka, Mirpur",
+                "img": "https://imgcdn.zigwheels.ph/large/gallery/exterior/83/1443/suzuki-gsx-r150-slant-rear-view-full-image-249291.jpg",
+                "originalPrice": "429,950",
+                "resalePrice": "320,950",
+                "useTime": "1 Year",
+                "postDate": "7/12/22"
+            },
+            {
+                "bikeName": "New Suzuki Gixxer",
+                "sellerName": "Bruce Banner",
+                "isVerified": "false",
+                "location": "Khulna",
+                "img": "https://www.indiacarnews.com/wp-content/uploads/2020/07/BS6-Suzuki-Gixxer-SF-New-Prices.jpg",
+                "originalPrice": "241,950",
+                "resalePrice": "190,450",
+                "useTime": "9 Month",
+                "postDate": "9/10/22"
+            }
+        ]
+    },
+    {
+        "category_id": "02",
+        "category_name": "HONDA",
+        "category_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Honda.svg/2560px-Honda.svg.png",
+        "bikes": [
+            {
+                "bikeName": "Honda CB150R Exmotion",
+                "sellerName": "Tony Stark",
+                "isVerified": "true",
+                "location": "Dhaka, Badda",
+                "img": "https://i.pinimg.com/originals/77/d1/2f/77d12ffa77824c4527232ba7c4d01aa9.jpg",
+                "originalPrice": "550,000",
+                "resalePrice": "480,000",
+                "useTime": "1 Year",
+                "postDate": "20/10/22"
+            },
+            {
+                "bikeName": "New Honda CBR 150R",
+                "sellerName": "Bruce Parker",
+                "isVerified": "false",
+                "location": "Chittagong",
+                "img": "https://imgcdnblog.carbay.com/bikeBlog/wp-content/uploads/2015/11/25082543/Honda-CBR-150-1.jpg",
+                "originalPrice": "550,000",
+                "resalePrice": "410,000",
+                "useTime": "2 Year",
+                "postDate": "19/12/22"
+            }
+        ]
+    },
+    {
+        "category_id": "03",
+        "category_name": "YAMAHA",
+        "category_img": "https://motosymbol.com/wp-content/uploads/2021/02/Yamaha-Logo.png",
+        "bikes": [
+            {
+                "bikeName": "Yamaha MT 15 ",
+                "sellerName": "Peter Stark",
+                "isVerified": "false",
+                "location": "Dhaka, Uttara",
+                "img": "https://blog.gaadikey.com/wp-content/uploads/2019/07/Yamaha-MT-15-Logo-Yamaha-MT15-Review-GaadiKey.jpg",
+                "originalPrice": "428,000",
+                "resalePrice": "410,000",
+                "useTime": "2 Month",
+                "postDate": "28/10/22"
+            },
+            {
+                "bikeName": "Yamaha XSR 155",
+                "sellerName": "Tom Banner",
+                "isVerified": "true",
+                "location": "Sylhet",
+                "img": "https://visor.ph/wp-content/uploads/2021/08/XSR155-MAIN1.jpg",
+                "originalPrice": "530,000",
+                "resalePrice": "420,000",
+                "useTime": "6 Month",
+                "postDate": "30/11/22"
+            }
+        ]
+    }
+]
