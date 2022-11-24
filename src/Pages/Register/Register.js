@@ -1,16 +1,54 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { GoogleAuthProvider } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../context/AuthProvider';
 
 const Register = () => {
 
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || "/";
+
+    const { createUser, updateUser, googleLogin } = useContext(AuthContext)
+
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const [loginError, setLoginError] = useState('')
+    const [registerError, setRegisterError] = useState('')
 
     const handleRegister = (data) => {
         console.log(data)
-        setLoginError('')
+        setRegisterError('')
+
+        createUser(data.email, data.password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                navigate(from, { replace: true });
+
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => { })
+                    .catch(err => console.log(err))
+            })
+            .catch(err => {
+                console.error(err.message)
+                setRegisterError(err.message)
+            })
+    }
+
+    const googleProvider = new GoogleAuthProvider()
+
+    const handleGoogleLogin = () => {
+        googleLogin(googleProvider)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+            })
+            .catch(err => console.log(err))
     }
 
     return (
@@ -46,14 +84,14 @@ const Register = () => {
                             className="border text-sm rounded-lg block w-full p-2.5 bg-gray-300 border-gray-400" />
                         <p className='text-red-600'>{errors.password?.message}</p>
                     </div>
-                    <span>{loginError && <p className='text-red-600'>{loginError}</p>}</span>
+                    <span>{registerError && <p className='text-red-600'>{registerError}</p>}</span>
                     <button type="submit" className="w-full btn btn-primary text-white font-medium rounded-lg text-center">Register</button>
                     <div className="text-sm font-medium">
                         Already have an account? <Link to='/login' className="text-blue-500 hover:underline">Please Login</Link>
                     </div>
                 </form>
                 <div className="divider">OR</div>
-                <button className='btn btn-outline btn-primary w-full'>CONTINUE WITH GOOGLE</button>
+                <button onClick={handleGoogleLogin} className='btn btn-outline btn-primary w-full'>CONTINUE WITH GOOGLE</button>
             </div>
         </div>
     );

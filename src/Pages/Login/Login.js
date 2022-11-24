@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../context/AuthProvider';
 
 const Login = () => {
+
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || "/";
+
+    const { login, googleLogin } = useContext(AuthContext)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -11,6 +20,28 @@ const Login = () => {
     const handleLogin = (data) => {
         console.log(data)
         setLoginError('')
+
+        login(data.email, data.password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                navigate(from, { replace: true });
+            })
+            .catch(err => {
+                console.log(err.message)
+                setLoginError(err.message)
+            })
+    }
+
+    const googleProvider = new GoogleAuthProvider()
+
+    const handleGoogleLogin = () => {
+        googleLogin(googleProvider)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+            })
+            .catch(err => console.log(err))
     }
 
     return (
@@ -44,7 +75,7 @@ const Login = () => {
                     </div>
                 </form>
                 <div className="divider">OR</div>
-                <button className='btn btn-outline btn-primary w-full'>CONTINUE WITH GOOGLE</button>
+                <button onClick={handleGoogleLogin} className='btn btn-outline btn-primary w-full'>CONTINUE WITH GOOGLE</button>
             </div>
         </div>
     );

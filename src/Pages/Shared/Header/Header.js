@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider';
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.log(err))
+    }
 
     // Responsive MenuItems Set -
     const menuItems = <React.Fragment>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
-        <li><Link className="btn btn-active btn-primary text-white ml-2 rounded-md" to='/login'>Login</Link></li>
+        {
+            user?.uid ?
+                <>
+                    <li onClick={handleLogOut}><span className="btn btn-active btn-primary text-white ml-2 rounded-md">Logout</span></li>
+                </>
+                :
+                <li><Link className="btn btn-active btn-primary text-white ml-2 rounded-md" to='/Login'>Login</Link></li>
+        }
     </React.Fragment>
 
     return (
