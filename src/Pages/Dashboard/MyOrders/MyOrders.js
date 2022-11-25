@@ -12,7 +12,12 @@ const MyOrders = () => {
 
     const { data: bikeorders = [], isLoading } = useQuery({
         queryKey: ['bikeorders', user?.email],
-        queryFn: () => fetch(url, {})
+        queryFn: () => fetch(url, {
+            // send token to the server - 
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
     })
 

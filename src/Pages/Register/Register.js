@@ -1,22 +1,28 @@
 import React, { useState, useContext } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
 
     const navigate = useNavigate()
-    const location = useLocation()
-
-    const from = location.state?.from?.pathname || "/";
 
     const { createUser, updateUser, googleLogin } = useContext(AuthContext)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [registerError, setRegisterError] = useState('')
+
+    //  get token from custom hook(useToken) - 
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
+    const [token] = useToken(createdUserEmail)
+
+    if (token) {
+        navigate('/');
+    }
 
     const handleRegister = (data) => {
         setRegisterError('')
@@ -26,19 +32,36 @@ const Register = () => {
                 const user = result.user
                 console.log(user)
                 toast.success('Register Successfull')
-                navigate(from, { replace: true });
 
                 const userInfo = {
                     displayName: data.name,
                     accountType: data.accountType
                 }
                 updateUser(userInfo)
-                    .then(() => { })
+                    .then(() => {
+                        saveUser(data.name, data.email, data.accountType);
+                    })
                     .catch(err => console.log(err))
             })
             .catch(err => {
                 console.error(err.message)
                 setRegisterError(err.message)
+            })
+    }
+
+    // post User's data in the server -
+    const saveUser = (name, email, accountType) => {
+        const user = { name, email, accountType };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                setCreatedUserEmail(email)
             })
     }
 
