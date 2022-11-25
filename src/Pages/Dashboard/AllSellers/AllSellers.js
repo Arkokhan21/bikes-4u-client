@@ -17,7 +17,6 @@ const AllSellers = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th></th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Account Type</th>
@@ -26,9 +25,8 @@ const AllSellers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => user.accountType === 'Seller' &&
+                            users.map((user) => user.accountType === 'Seller' &&
                                 <tr key={user._id}>
-                                    <th>{index + 1}</th>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
                                     <td>{user.accountType}</td>
