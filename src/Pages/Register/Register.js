@@ -19,7 +19,6 @@ const Register = () => {
     const [registerError, setRegisterError] = useState('')
 
     const handleRegister = (data) => {
-        console.log(data)
         setRegisterError('')
 
         createUser(data.email, data.password)
@@ -30,7 +29,8 @@ const Register = () => {
                 navigate(from, { replace: true });
 
                 const userInfo = {
-                    displayName: data.name
+                    displayName: data.name,
+                    accountType: data.accountType
                 }
                 updateUser(userInfo)
                     .then(() => { })
@@ -86,6 +86,11 @@ const Register = () => {
                             className="border text-sm rounded-lg block w-full p-2.5 bg-gray-300 border-gray-400" />
                         <p className='text-red-600'>{errors.password?.message}</p>
                     </div>
+                    <select {...register("accountType", {})}
+                        className="select select-bordered w-full">
+                        <option selected>Buyer</option>
+                        <option>Seller</option>
+                    </select>
                     <span>{registerError && <p className='text-red-600'>{registerError}</p>}</span>
                     <button type="submit" className="w-full btn btn-primary text-white font-medium rounded-lg text-center">Register</button>
                     <div className="text-sm font-medium">

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../context/AuthProvider';
 
 const SubmitModal = ({ bikeForBuy, setBikeForBuy }) => {
@@ -13,7 +14,7 @@ const SubmitModal = ({ bikeForBuy, setBikeForBuy }) => {
         const phone = form.phone.value
         const location = form.location.value
 
-        const submitting = {
+        const bikeOrder = {
             bike: bikeName,
             price: resalePrice,
             buyer: buyerName,
@@ -21,9 +22,26 @@ const SubmitModal = ({ bikeForBuy, setBikeForBuy }) => {
             email,
             location,
         }
-        console.log(submitting)
-        setBikeForBuy(null)
 
+        // post modal data in server - 
+        fetch('http://localhost:5000/bikeorders', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bikeOrder)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    // if the value is null the modal is closed - 
+                    setBikeForBuy(null)
+                    toast.success('Submitted')
+                }
+                else {
+                    toast.error(data.message)
+                }
+            })
     }
 
     const { resalePrice, bikeName } = bikeForBuy
