@@ -22,7 +22,7 @@ const AddProduct = () => {
             bikeName: data.bikeName,
             category: data.category,
             photoUrl: data.photoUrl,
-            price: data.price,
+            resalePrice: data.price,
             conditionType: data.conditionType,
             phone: data.phone,
             location: data.location,

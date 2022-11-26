@@ -50,6 +50,24 @@ const MyProduct = () => {
             })
     }
 
+    // select products for advertise - 
+    const handlesetAdvertise = (id) => {
+        fetch(`http://localhost:5000/addedbikes/${id}`, {
+            method: 'PUT',
+            // get token from local storage and send it to the server - 
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('The product has been selected for advertisement')
+                    refetch();
+                }
+            })
+    }
+
     return (
         <div>
             <h2 className='text-2xl mb-6'>My Products</h2>
@@ -83,7 +101,7 @@ const MyProduct = () => {
 
                                     <td><button className='btn btn-primary btn-sm'></button></td>
 
-                                    <td><button className="btn btn-xs btn-primary">Advertise</button></td>
+                                    <td>{addedBike?.isAdvertise !== 'advertise' && <button onClick={() => handlesetAdvertise(addedBike._id)} className="btn btn-sm btn-primary">Advertise</button>}</td>
                                 </tr>)
                         }
                     </tbody>
