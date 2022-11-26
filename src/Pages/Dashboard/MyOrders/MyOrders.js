@@ -8,6 +8,7 @@ const MyOrders = () => {
 
     const { user } = useContext(AuthContext)
 
+    // load data by specific user email - 
     const url = `http://localhost:5000/bikeorders?email=${user?.email}`
 
     const { data: bikeorders = [], isLoading } = useQuery({
