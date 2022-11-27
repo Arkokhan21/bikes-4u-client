@@ -31,8 +31,8 @@
 5. Stripe, TanStack Query
 
 
-## Live Site Link: 
+## Live Site Link: https://bikes4u-eb6ec.web.app/
 
-## adminEmail: <biker@bikes.com>
+## adminEmail: biker@bikes.com
 
-## adminPassword: <123456>
+## adminPassword: 123456

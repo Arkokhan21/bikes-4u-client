@@ -17,7 +17,7 @@ const CheckoutForm = ({ orderedbike }) => {
 
     // get payment data (clientSecret) - 
     useEffect(() => {
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://bikes-4u-server.vercel.app/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -76,7 +76,7 @@ const CheckoutForm = ({ orderedbike }) => {
                 orderedbikeId: _id
             }
             // post payment data in database - 
-            fetch('http://localhost:5000/payments', {
+            fetch('https://bikes-4u-server.vercel.app/payments', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",

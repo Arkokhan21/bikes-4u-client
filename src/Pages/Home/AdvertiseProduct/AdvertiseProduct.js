@@ -11,7 +11,7 @@ const AdvertiseProduct = () => {
     // get all addedbikes from database -
     const { data: addedBikes = [], isLoading } = useQuery({
         queryKey: ['addedbikesss'],
-        queryFn: () => fetch('http://localhost:5000/addedbikesss')
+        queryFn: () => fetch('https://bikes-4u-server.vercel.app/addedbikesss')
             .then(res => res.json())
     })
 

@@ -9,7 +9,7 @@ const MyOrders = () => {
     const { user } = useContext(AuthContext)
 
     // load data by specific user email - 
-    const url = `http://localhost:5000/bikeorders?email=${user?.email}`
+    const url = `https://bikes-4u-server.vercel.app/bikeorders?email=${user?.email}`
 
     const { data: bikeorders = [], isLoading } = useQuery({
         queryKey: ['bikeorders', user?.email],

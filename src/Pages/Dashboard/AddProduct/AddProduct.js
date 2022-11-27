@@ -31,7 +31,7 @@ const AddProduct = () => {
         }
 
         // post added bike details in the database - 
-        fetch('http://localhost:5000/addedbikes', {
+        fetch('https://bikes-4u-server.vercel.app/addedbikes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

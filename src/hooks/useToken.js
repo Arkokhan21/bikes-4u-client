@@ -7,7 +7,7 @@ const useToken = (email) => {
     // get jwt token from server and saved in local storage - 
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/jwt?email=${email}`)
+            fetch(`https://bikes-4u-server.vercel.app/jwt?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.accessToken) {

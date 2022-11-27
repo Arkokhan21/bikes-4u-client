@@ -16,7 +16,7 @@ const MyProduct = () => {
     const { user } = useContext(AuthContext)
 
     // load data by specific user email - 
-    const url = `http://localhost:5000/addedbikes?email=${user?.email}`
+    const url = `https://bikes-4u-server.vercel.app/addedbikes?email=${user?.email}`
 
     const { data: addedBikes = [], isLoading, refetch } = useQuery({
         queryKey: ['addedbikes', user?.email],
@@ -35,7 +35,7 @@ const MyProduct = () => {
 
     // delete addedbikes from database - 
     const handleDeleteProduct = (addedBike) => {
-        fetch(`http://localhost:5000/addedbikes/${addedBike._id}`, {
+        fetch(`https://bikes-4u-server.vercel.app/addedbikes/${addedBike._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -52,7 +52,7 @@ const MyProduct = () => {
 
     // select products for advertise - 
     const handlesetAdvertise = (id) => {
-        fetch(`http://localhost:5000/addedbikes/${id}`, {
+        fetch(`https://bikes-4u-server.vercel.app/addedbikes/${id}`, {
             method: 'PUT',
             // get token from local storage and send it to the server - 
             headers: {

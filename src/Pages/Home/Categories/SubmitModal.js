@@ -24,7 +24,7 @@ const SubmitModal = ({ bikeForBuy, setBikeForBuy }) => {
         }
 
         // post modal data in server - 
-        fetch('http://localhost:5000/bikeorders', {
+        fetch('https://bikes-4u-server.vercel.app/bikeorders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

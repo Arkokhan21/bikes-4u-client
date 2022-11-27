@@ -32,7 +32,7 @@ const router = createBrowserRouter([
             {
                 path: '/categories/:id',
                 element: <PrivateRoute><CategoriesDetails></CategoriesDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://bikes-4u-server.vercel.app/categories/${params.id}`)
             },
             {
                 path: '/login',
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <BuyersRoute><Payment></Payment></BuyersRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/bikeorders/${params.id}`)
+                loader: ({ params }) => fetch(`https://bikes-4u-server.vercel.app/bikeorders/${params.id}`)
             },
         ]
     }

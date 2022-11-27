@@ -15,7 +15,7 @@ const AllBuyers = () => {
     // get all users from database -
     const { data: users = [], refetch, isLoading } = useQuery({
         queryKey: ['users'],
-        queryFn: () => fetch('http://localhost:5000/users?')
+        queryFn: () => fetch('https://bikes-4u-server.vercel.app/users?')
             .then(res => res.json())
     })
 
@@ -25,7 +25,7 @@ const AllBuyers = () => {
 
     // delete addedbikes from database - 
     const handleDeleteBuyer = (user) => {
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`https://bikes-4u-server.vercel.app/users/${user._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

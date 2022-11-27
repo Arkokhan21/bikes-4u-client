@@ -51,7 +51,7 @@ const Register = () => {
     // post User's data in the server -
     const saveUser = (name, email, accountType) => {
         const user = { name, email, accountType };
-        fetch('http://localhost:5000/users', {
+        fetch('https://bikes-4u-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
