@@ -69,8 +69,8 @@ const MyProduct = () => {
     }
 
     return (
-        <div>
-            <h2 className='text-2xl mb-6'>My Products</h2>
+        <div className='ml-10 mt-10'>
+            <h2 className='text-2xl mb-6 font-bold'>Your Products</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -90,7 +90,7 @@ const MyProduct = () => {
                             addedBikes?.map((addedBike) =>
                                 <tr key={addedBike._id}>
                                     <td>{addedBike.bikeName}</td>
-                                    <td>{addedBike.price}</td>
+                                    <td>{addedBike.resalePrice}</td>
                                     <td>{addedBike.sellerName}</td>
                                     <td>{addedBike.phone}</td>
                                     <td>{addedBike.location}</td>

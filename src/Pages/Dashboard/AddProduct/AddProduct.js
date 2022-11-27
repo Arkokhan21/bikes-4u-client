@@ -48,9 +48,9 @@ const AddProduct = () => {
     }
 
     return (
-        <div>
+        <div className='ml-10 mt-10 mb-6'>
             <form onSubmit={handleSubmit(handleAddProduct)}>
-                <h2 className='text-2xl font-bold my-3'>Add A Bike</h2>
+                <h2 className='text-2xl font-bold my-3'>Add Your Bike</h2>
                 <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'>
                     <input {...register("bikeName", {})} type="text" placeholder="bike name" className="input input-bordered input-lg w-full" required />
                     <input {...register("category", {})} type="text" placeholder="brand name" className="input input-bordered input-lg w-full" required />
