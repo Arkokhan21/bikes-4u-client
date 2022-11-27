@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../context/AuthProvider';
 
 const AdvertiseProductDetails = ({ addedBike, setBikeForBuy }) => {
+
+    const { user } = useContext(AuthContext)
 
     const { useTime, conditionType, resalePrice, photoUrl, category, bikeName } = addedBike;
 
@@ -19,7 +22,9 @@ const AdvertiseProductDetails = ({ addedBike, setBikeForBuy }) => {
                 <h2 className="">Conditon: {conditionType}</h2>
 
                 <div className="card-actions justify-end">
-                    <label onClick={() => setBikeForBuy(addedBike)} htmlFor="submit-modal" className="btn btn-active btn-primary">Buy Now</label>
+                    {
+                        user && <label onClick={() => setBikeForBuy(addedBike)} htmlFor="submit-modal" className="btn btn-active btn-primary">Buy Now</label>
+                    }
                 </div>
             </div>
         </div>

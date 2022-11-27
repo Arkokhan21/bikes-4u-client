@@ -44,7 +44,6 @@ const Register = () => {
                     .catch(err => console.log(err))
             })
             .catch(err => {
-                console.error(err.message)
                 setRegisterError(err.message)
             })
     }

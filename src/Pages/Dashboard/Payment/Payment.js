@@ -20,7 +20,7 @@ const Payment = () => {
     }
 
     return (
-        <div>
+        <div className='my-10'>
             <p className='text-xl'>Please Pay <strong>{price} BDT</strong>  To Get Your Dream Bike <strong>{bike}</strong> </p>
             <div className='w-96 mt-6'>
                 <Elements stripe={stripePromise}>

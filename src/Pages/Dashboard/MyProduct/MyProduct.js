@@ -69,7 +69,7 @@ const MyProduct = () => {
     }
 
     return (
-        <div className='ml-10 mt-10'>
+        <div className='mt-10'>
             <h2 className='text-2xl mb-6 font-bold'>Your Products</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
@@ -98,9 +98,7 @@ const MyProduct = () => {
                                         <label onClick={() => setDeletingProducts(addedBike)}
                                             htmlFor="confirmation-modal" className="btn btn-sm btn-error">Remove</label>
                                     </td>
-
-                                    <td><button className='btn btn-primary btn-sm'></button></td>
-
+                                    <td></td>
                                     <td>{addedBike?.isAdvertise !== 'advertise' && <button onClick={() => handlesetAdvertise(addedBike._id)} className="btn btn-sm btn-primary">Advertise</button>}</td>
                                 </tr>)
                         }

@@ -23,7 +23,7 @@ const AllBuyers = () => {
         return <Loading></Loading>
     }
 
-    // / delete addedbikes from database - 
+    // delete addedbikes from database - 
     const handleDeleteBuyer = (user) => {
         fetch(`http://localhost:5000/users/${user._id}`, {
             method: 'DELETE',
@@ -41,8 +41,8 @@ const AllBuyers = () => {
     }
 
     return (
-        <div className='ml-10 mt-10'>
-            <h2 className='text-2xl mb-6'>All Buyers</h2>
+        <div className='mt-10'>
+            <h2 className='text-2xl mb-6 font-bold'>All Buyers</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
