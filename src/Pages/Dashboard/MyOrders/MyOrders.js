@@ -53,9 +53,16 @@ const MyOrders = () => {
                                     <td>{bikeorder.phone}</td>
                                     <td>{bikeorder.location}</td>
                                     <td>
-                                        <Link>
-                                            <button className='btn btn-primary btn-sm'>Pay</button>
-                                        </Link>
+                                        {
+                                            bikeorder.price && !bikeorder.paid &&
+                                            <Link to={`/dashboard/payment/${bikeorder._id}`}>
+                                                <button className='btn btn-primary btn-sm'>Pay</button>
+                                            </Link>
+                                        }
+                                        {
+                                            bikeorder.price && bikeorder.paid &&
+                                            <span>Paid</span>
+                                        }
                                     </td>
                                 </tr>)
                         }
