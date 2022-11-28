@@ -21,6 +21,7 @@ const SubmitModal = ({ bikeForBuy, setBikeForBuy }) => {
             phone,
             email,
             location,
+            sellerId: _id
         }
 
         // post modal data in server - 
@@ -44,7 +45,7 @@ const SubmitModal = ({ bikeForBuy, setBikeForBuy }) => {
             })
     }
 
-    const { resalePrice, bikeName } = bikeForBuy
+    const { resalePrice, bikeName, _id } = bikeForBuy
 
     return (
         <div>

@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../context/AuthProvider';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
@@ -7,13 +7,23 @@ import Loading from '../../Shared/Loading/Loading';
 
 const MyProduct = () => {
 
+    const { user } = useContext(AuthContext)
+
     const [deletingProducts, setDeletingProducts] = useState(null)
 
     const closeModal = () => {
         return setDeletingProducts(null)
     }
 
-    const { user } = useContext(AuthContext)
+    // get all modal data(bike-orders) from database -
+    const [orderedbike, setOrderedbike] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/bikeordersss', {
+        })
+            .then(res => res.json())
+            .then(data => setOrderedbike(data))
+    }, [])
 
     // load data by specific user email - 
     const url = `https://bikes-4u-server.vercel.app/addedbikes?email=${user?.email}`
@@ -98,7 +108,9 @@ const MyProduct = () => {
                                         <label onClick={() => setDeletingProducts(addedBike)}
                                             htmlFor="confirmation-modal" className="btn btn-sm btn-error">Remove</label>
                                     </td>
-                                    <td></td>
+                                    <td>{orderedbike.map(ob => ob.sellerId === addedBike._id && ob.paid === true &&
+                                        <span className='text-green-500 font-bold'>SOLD</span>)}
+                                    </td>
                                     <td>{addedBike?.isAdvertise !== 'advertise' && <button onClick={() => handlesetAdvertise(addedBike._id)} className="btn btn-sm btn-primary">Advertise</button>}</td>
                                 </tr>)
                         }
