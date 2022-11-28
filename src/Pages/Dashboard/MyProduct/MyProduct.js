@@ -19,7 +19,7 @@ const MyProduct = () => {
     const [orderedbike, setOrderedbike] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/bikeordersss', {
+        fetch('https://bikes-4u-server.vercel.app/bikeordersss', {
         })
             .then(res => res.json())
             .then(data => setOrderedbike(data))
