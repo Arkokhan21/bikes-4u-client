@@ -6,7 +6,9 @@ const BikeDetails = ({ bike, setBikeForBuy }) => {
     const { bikeName, sellerName, isVerified, location, img, originalPrice, resalePrice, useTime, postDate } = bike;
 
     return (
-        <div className="card w-96 h-[600px] bg-gray-200 shadow-xl">
+        <div className="card w-96 h-[600px] bg-gray-200 shadow-xl" data-aos="zoom-in"
+            data-aos-easing="linear"
+            data-aos-duration="1000">
             <figure><img src={img} alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{bikeName}</h2>

@@ -40,7 +40,7 @@ const Header = () => {
                         </ul>
                     </div>
                     <img className='w-20 h-14' src="https://www.svgrepo.com/show/284670/motorbike-transportation.svg" alt="" />
-                    <Link to='/' className="text-3xl font-bold">Bikes 4U</Link>
+                    <Link to='/' className="text-2xl lg:text-3xl font-bold">Bikes4U</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Askedquestions = () => {
     return (
-        <section className="bg-gray-200 text-black mb-32 w-4/5 mx-auto">
+        <section className="bg-gray-200 text-black mb-32 w-4/5 mx-auto rounded-md">
             <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
                 <h2 className="mb-12 text-3xl font-bold leading-none text-center">Clear All Your Doubts</h2>
                 <div className="flex flex-col sm:px-8 lg:px-12 xl:px-32">

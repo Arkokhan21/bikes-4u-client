@@ -14,7 +14,7 @@ const Dashboard = () => {
     };
 
     return (
-        <div className=''>
+        <div>
             <Lottie options={defaultOptions}
                 height={550}
                 width={550} />

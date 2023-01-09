@@ -62,7 +62,7 @@ const AddProduct = () => {
                     <input {...register("useTime", {})} type="text" placeholder="year of purchase " className="input input-bordered input-lg w-full" required />
                 </div>
                 <textarea {...register("description", {})} className="textarea textarea-bordered h-28 w-full mt-5" placeholder="description"></textarea>
-                <input className="btn btn-active btn-primary text-white mt-5" type="submit" value="Add Product" />
+                <input className="btn btn-active btn-primary text-white my-5" type="submit" value="Add Product" />
             </form>
         </div>
     );
