@@ -50,6 +50,9 @@ const Register = () => {
 
     // post User's data in the server -
     const saveUser = (name, email, accountType) => {
+        if (!accountType) {
+            accountType = "Buyer"
+        }
         const user = { name, email, accountType };
         fetch('https://bikes-4u-server.vercel.app/users', {
             method: 'POST',
@@ -70,7 +73,7 @@ const Register = () => {
         googleLogin(googleProvider)
             .then(result => {
                 const user = result.user
-                console.log(user)
+                saveUser(user.displayName, user.email);
             })
             .catch(err => console.log(err))
     }

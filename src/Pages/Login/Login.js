@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { GoogleAuthProvider } from 'firebase/auth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../context/AuthProvider';
@@ -12,7 +11,7 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || "/";
 
-    const { login, googleLogin } = useContext(AuthContext)
+    const { login } = useContext(AuthContext)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -40,17 +39,6 @@ const Login = () => {
                 console.log(err.message)
                 setLoginError(err.message)
             })
-    }
-
-    const googleProvider = new GoogleAuthProvider()
-
-    const handleGoogleLogin = () => {
-        googleLogin(googleProvider)
-            .then(result => {
-                const user = result.user
-                console.log(user)
-            })
-            .catch(err => console.log(err))
     }
 
     return (
@@ -83,8 +71,7 @@ const Login = () => {
                         New to Bikes 4U? <Link to='/register' className="text-blue-500 hover:underline">Create new account</Link>
                     </div>
                 </form>
-                <div className="divider">OR</div>
-                <button onClick={handleGoogleLogin} className='btn btn-outline btn-primary w-full'>CONTINUE WITH GOOGLE</button>
+                <div className="divider"></div>
             </div>
         </div>
     );

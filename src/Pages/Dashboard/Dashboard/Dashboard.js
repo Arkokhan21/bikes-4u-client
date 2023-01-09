@@ -1,10 +1,25 @@
 import React from 'react';
+import Lottie from 'react-lottie';
+import animation from '../../../assets/animation/115023-bike.json'
 
 const Dashboard = () => {
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animation,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
+
     return (
-        <div className='my-20'>
-            <img className='h-[500px] w-full' src="https://www.svgrepo.com/show/113750/motorbike.svg" alt="" />
+        <div className=''>
+            <Lottie options={defaultOptions}
+                height={550}
+                width={550} />
         </div>
+
     );
 };
 

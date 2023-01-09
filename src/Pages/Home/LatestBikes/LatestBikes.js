@@ -11,7 +11,7 @@ const LatestBikes = () => {
                 <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
                     <article className="flex flex-col bg-gray-500">
                         <span rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                            <img alt="" className="object-cover w-full h-52 bg-gray-500" src="https://i.cdn.newsbytesapp.com/images/l96720211215182954.jpeg" />
+                            <img alt="" className="object-cover w-full h-52 bg-gray-500" src="https://i.ibb.co/KLDskYJ/bike9.jpg" />
                         </span>
                         <div className="flex flex-col flex-1 p-6">
                             <h2>KTM RC 125 2022</h2>
@@ -24,7 +24,7 @@ const LatestBikes = () => {
                     </article>
                     <article className="flex flex-col bg-gray-500">
                         <span rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                            <img alt="" className="object-cover w-full h-52 bg-gray-500" src="https://www.bennetts.co.uk/-/media/bikesocial/reviews/bikes/2017-ktm-duke-125/740_duke_125_detail_2017-03-31-ktm-duke-turin-52.ashx?h=444&la=en&w=740&hash=B2F29AC447AD3EE14A0A5A97553248F6A8553C80" />
+                            <img alt="" className="object-cover w-full h-52 bg-gray-500" src="https://i.ibb.co/M8vGxXn/bike10.webp" />
                         </span>
                         <div className="flex flex-col flex-1 p-6">
                             <h2>KTM Duke 125 European Edition</h2>
@@ -37,7 +37,7 @@ const LatestBikes = () => {
                     </article>
                     <article className="flex flex-col bg-gray-500">
                         <span rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                            <img alt="" className="object-cover w-full h-52 bg-gray-500" src="https://asset.kompas.com/crops/upOZNMFVOU6zzpFTA_VAiqaSPZw=/196x111:1845x1210/750x500/data/photo/2021/12/08/61afe0af03822.jpg" />
+                            <img alt="" className="object-cover w-full h-52 bg-gray-500" src="https://i.ibb.co/vDbVKSG/bike12.jpg" />
                         </span>
                         <div className="flex flex-col flex-1 p-6">
                             <h2>Yamaha R15M</h2>
@@ -50,7 +50,7 @@ const LatestBikes = () => {
                     </article>
                     <article className="flex flex-col bg-gray-500">
                         <span rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                            <img alt="" className="object-cover w-full h-52 bg-gray-500" src="https://cdni.autocarindia.com/ExtraImages/20180919044756_Aprilia%20RS%20150.JPG" />
+                            <img alt="" className="object-cover w-full h-52 bg-gray-500" src="https://i.ibb.co/k2zfmrV/bike11.jpg" />
                         </span>
                         <div className="flex flex-col flex-1 p-6">
                             <h2>Aprilia GPR 150</h2>

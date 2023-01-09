@@ -2,14 +2,14 @@
     {
         "category_id": "01",
         "category_name": "SUZUKI",
-        "category_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Suzuki_logo_2.svg/2560px-Suzuki_logo_2.svg.png",
+        "category_img": "https://i.ibb.co/ySZ0W9L/suzuki.png",
         "bikes": [
             {
                 "bikeName": "Suzuki GSX-R150",
                 "sellerName": "Peter Parker",
                 "isVerified": "true",
                 "location": "Dhaka, Mirpur",
-                "img": "https://imgcdn.zigwheels.ph/large/gallery/exterior/83/1443/suzuki-gsx-r150-slant-rear-view-full-image-249291.jpg",
+                "img": "https://i.ibb.co/xfmMyvP/bike3.webp",
                 "originalPrice": "429,950",
                 "resalePrice": "320,950",
                 "useTime": "1 Year",
@@ -20,7 +20,7 @@
                 "sellerName": "Bruce Banner",
                 "isVerified": "false",
                 "location": "Khulna",
-                "img": "https://www.indiacarnews.com/wp-content/uploads/2020/07/BS6-Suzuki-Gixxer-SF-New-Prices.jpg",
+                "img": "https://i.ibb.co/XS2C6qC/bike4.jpg",
                 "originalPrice": "241,950",
                 "resalePrice": "190,450",
                 "useTime": "9 Month",
@@ -31,14 +31,14 @@
     {
         "category_id": "02",
         "category_name": "HONDA",
-        "category_img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Honda.svg/2560px-Honda.svg.png",
+        "category_img": "https://i.ibb.co/Y8gNqC2/honda.png",
         "bikes": [
             {
                 "bikeName": "Honda CB150R Exmotion",
                 "sellerName": "Tony Stark",
                 "isVerified": "true",
                 "location": "Dhaka, Badda",
-                "img": "https://i.pinimg.com/originals/77/d1/2f/77d12ffa77824c4527232ba7c4d01aa9.jpg",
+                "img": "https://i.ibb.co/f0sHDCQ/bike8.jpg",
                 "originalPrice": "550,000",
                 "resalePrice": "480,000",
                 "useTime": "1 Year",
@@ -49,7 +49,7 @@
                 "sellerName": "Bruce Parker",
                 "isVerified": "false",
                 "location": "Chittagong",
-                "img": "https://imgcdnblog.carbay.com/bikeBlog/wp-content/uploads/2015/11/25082543/Honda-CBR-150-1.jpg",
+                "img": "https://i.ibb.co/vxZWVKH/bike7.webp",
                 "originalPrice": "550,000",
                 "resalePrice": "410,000",
                 "useTime": "2 Year",
@@ -60,14 +60,14 @@
     {
         "category_id": "03",
         "category_name": "YAMAHA",
-        "category_img": "https://motosymbol.com/wp-content/uploads/2021/02/Yamaha-Logo.png",
+        "category_img": "https://i.ibb.co/8DkLcRB/yamaha.png",
         "bikes": [
             {
                 "bikeName": "Yamaha MT 15 ",
                 "sellerName": "Peter Stark",
                 "isVerified": "false",
                 "location": "Dhaka, Uttara",
-                "img": "https://blog.gaadikey.com/wp-content/uploads/2019/07/Yamaha-MT-15-Logo-Yamaha-MT15-Review-GaadiKey.jpg",
+                "img": "https://i.ibb.co/LZMs2yk/bike6.webp",
                 "originalPrice": "428,000",
                 "resalePrice": "410,000",
                 "useTime": "2 Month",
@@ -78,7 +78,7 @@
                 "sellerName": "Tom Banner",
                 "isVerified": "true",
                 "location": "Sylhet",
-                "img": "https://visor.ph/wp-content/uploads/2021/08/XSR155-MAIN1.jpg",
+                "img": "https://i.ibb.co/zNRSHzD/bike5.jpg",
                 "originalPrice": "530,000",
                 "resalePrice": "420,000",
                 "useTime": "6 Month",
