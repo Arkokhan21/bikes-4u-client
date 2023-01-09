@@ -10,12 +10,12 @@ const BikeDetails = ({ bike, setBikeForBuy }) => {
             <figure><img src={img} alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{bikeName}</h2>
-                <h2 className="">Seller Name: {sellerName} {isVerified === 'true' ? <GoVerified className='text-green-500' /> : ''}  </h2>
-                <h2 className="">From: {location}</h2>
-                <h2 className="">Original Price: {originalPrice} BDT</h2>
-                <h2 className="">Resale Price: {resalePrice} BDT</h2>
-                <h2 className="">Years/Months of use: {useTime}</h2>
-                <h2 className="">Post: {postDate}</h2>
+                <h2>Seller Name: {sellerName} {isVerified === 'true' ? <GoVerified className='text-green-500 inline' /> : ''}</h2>
+                <h2>From: {location}</h2>
+                <h2>Original Price: {originalPrice} BDT</h2>
+                <h2>Resale Price: {resalePrice} BDT</h2>
+                <h2>Years/Months of use: {useTime}</h2>
+                <h2>Post: {postDate}</h2>
 
                 <div className="card-actions justify-end">
                     <label onClick={() => setBikeForBuy(bike)} htmlFor="submit-modal" className="btn btn-active btn-primary">Buy Now</label>
